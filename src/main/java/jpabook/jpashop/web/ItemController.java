@@ -3,7 +3,6 @@ package jpabook.jpashop.web;
 import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.service.ItemService;
-import jpabook.jpashop.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -33,6 +32,7 @@ public class ItemController {
     @PostMapping("/items/new")
     public String create(BookForm bookForm) {
         Book book = new Book();
+
         book.setName(bookForm.getName());
         book.setPrice(bookForm.getPrice());
         book.setStockQuantity(bookForm.getStockQuantity());
